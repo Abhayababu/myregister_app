@@ -11,6 +11,16 @@
             <button type="submit">Login</button>
         </form>
         <p>Don't have an account? <a href="/register">register</a></p>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                    {% for category, message in messages %}
+                        <li>{{ messages }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}  
+       {% endwith %}     
+                
          
     </body>
 </html>
